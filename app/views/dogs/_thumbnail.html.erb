@@ -1,8 +1,8 @@
-<div class="grid-item-<%= dog.id % 2 %>">
-<a href="<%= url_for(dog) %>">
-  <article>
-    <h2 class="dog-name"><%= dog.name %></h2>
-    <%= image_tag url_for(dog.images.first), class: "dog-photo", alt: "Photo of #{dog.name}" %>
-  </article>
-</a>
+<div class="grid-item">
+  <a href="<%= url_for(dog) %>">
+    <article>
+     <h2 class="dog-name"><%= dog.name %></h2>
+     <%= image_tag url_for(dog.images.first), class: "dog-photo", alt: "Photo of #{dog.name}" %>
+    </article>
+  </a>
 </div>

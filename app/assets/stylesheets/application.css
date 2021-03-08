@@ -21,18 +21,20 @@ header {
 }
 
 
-.dog-profile {
-
-}
-
 .grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
 }
 
-.grid-item-0 {
-  grid-column: 2/2;
+.grid-item {
+  border: 1px solid black;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
 }
 
-.grid-item-1 {
-  grid-column: 1/1;
+.dog-photo {
+  width: 100%;
+  border-radius: 1rem;
 }
