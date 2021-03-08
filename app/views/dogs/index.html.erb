@@ -1,3 +1,6 @@
 <div class="grid">
-  <%= render partial: 'thumbnail', collection: @dogs, as: :dog %>
+  <% @dogs.each_with_index do |dog, i| %>
+    <%= render partial: 'thumbnail', locals: { dog: dog } %>
+    <%= render partial: 'ad' if i % 3 == 0 %>
+  <% end %>
 </div>
