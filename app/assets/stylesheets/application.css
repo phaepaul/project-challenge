@@ -19,3 +19,20 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+
+.dog-profile {
+
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-item-0 {
+  grid-column: 2/2;
+}
+
+.grid-item-1 {
+  grid-column: 1/1;
+}
