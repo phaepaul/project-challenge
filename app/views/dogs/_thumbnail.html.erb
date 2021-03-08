@@ -4,5 +4,12 @@
      <h2 class="dog-name"><%= dog.name %></h2>
      <%= image_tag url_for(dog.images.first), class: "dog-photo", alt: "Photo of #{dog.name}" %>
     </article>
+    <p>
+      <%= "#{dog.likes.count} people liked this dog!" %>
+    </p>
   </a>
+  <%= form_tag '/likes', method: :post, remote: true do %>
+    <%= hidden_field_tag :dog_id, dog.id %>
+    <%= submit_tag '<3' %>
+  <% end %>
 </div>
