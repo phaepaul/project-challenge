@@ -2,6 +2,8 @@ class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_owner, only: [:edit, :update, :destroy]
 
+  include LikesHelper
+
   # GET /dogs
   # GET /dogs.json
   def index
@@ -30,7 +32,7 @@ class DogsController < ApplicationController
     respond_to do |format|
       if @dog.save
         @dog.images.attach(params[:dog][:image]) if params[:dog][:image].present?
-        @dog.update(user_id: current_user.id)
+        @dog.update(user_id: current_user.id) if current_user
 
         format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
         format.json { render :show, status: :created, location: @dog }

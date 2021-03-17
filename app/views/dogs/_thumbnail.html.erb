@@ -12,4 +12,9 @@
     <%= hidden_field_tag :dog_id, dog.id %>
     <%= submit_tag '<3' %>
   <% end %>
+
+ <%= form_tag '/likes', method: :delete, remote: true do %>
+    <%= hidden_field_tag :like_id, get_user_dog_likes(dog.id, current_user&.id)  %>
+    <%= submit_tag '</3' %>
+  <% end %>
 </div>
